@@ -1,0 +1,41 @@
+// resets
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Darker Grotesque', sans-serif;
+}
+
+// colors 
+$dark-purple: #391952;
+$light-purple: #BA80E6;
+$lighter-purple: #CBA5E9;
+$white: #F8F2FC;
+
+body{
+    background-color: $white;
+}
+
+// mixins
+@mixin flex($flex-direction,$align-items,$justify-content,$gap){
+    display: flex;
+    flex-direction: $flex-direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    gap: $gap;
+}
+
+@mixin transition{
+    transition: all .6s ease-in-out;
+}
+
+@mixin button{
+    all: unset;
+    background-color: $dark-purple;
+    color: $white;
+    padding: 0.5625rem 1.25rem;
+    border-radius: 1.25rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    cursor: pointer;
+}

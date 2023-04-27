@@ -1,0 +1,59 @@
+.nav-toggle-menu{
+    position: absolute;
+    left: 2rem;
+    top: 1.5rem;
+    @include flex(row,center,space-between,.5rem);
+    width: 11rem;
+    padding: .4rem;
+    background: $light-purple;
+    z-index: 1;
+    border-radius: 3.125rem;
+    @include transition;
+
+    &.active{
+        width: 17rem;
+        background-color: $dark-purple;
+    }
+
+    .logo{
+        text-decoration: none;
+        font-size: 2rem;
+        color: $dark-purple;
+        font-weight: 900;
+        @include transition;
+        margin-top: -2%;
+
+        &.active{
+            color: $light-purple;
+        }
+    }
+
+         .menu-btn {
+             @include transition;
+             @include button;
+
+             &:hover{
+                color: $dark-purple;
+                background-color: $white;
+             }
+
+             &.active{
+                color: $dark-purple;
+                background-color: $white;
+             }
+         }
+}
+
+.js-backdrop{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(22,12,31, 0.35);
+    z-index: .5;
+    visibility: hidden;
+
+
+    &.active{
+        visibility: visible;
+    }
+}
