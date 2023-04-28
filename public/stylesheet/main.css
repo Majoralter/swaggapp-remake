@@ -19,11 +19,12 @@ header nav .nav-items {
   justify-content: flex-start;
   gap: 1rem;
   position: fixed;
+  z-index: 1;
   padding: 3.5rem 1.5rem 1.5rem;
   background-color: #391952;
   width: fit-content;
   border-radius: 1.25rem;
-  transform-origin: 50% -50%;
+  transform-origin: left 0%;
   transform: scaleY(0);
   transition: all 0.5s ease-in-out;
 }
@@ -43,7 +44,7 @@ header nav .nav-items ul li a {
   color: #BA80E6;
   text-decoration: none;
   font-size: 2.4rem;
-  font-weight: 900;
+  font-weight: 800;
   transition: all 0.6s ease-in-out;
 }
 header nav .nav-items ul li a:hover {
@@ -146,7 +147,7 @@ header nav button:hover::before {
   width: 11rem;
   padding: 0.4rem;
   background: #BA80E6;
-  z-index: 1;
+  z-index: 5;
   border-radius: 3.125rem;
   transition: all 0.6s ease-in-out;
 }
@@ -267,7 +268,7 @@ main .hero .hero-title button:hover {
 }
 main .hero .hero-title button span {
   position: relative;
-  z-index: 1;
+  z-index: 0.2;
 }
 main .hero .hero-title button::before {
   transition: all 0.6s ease-in-out;
