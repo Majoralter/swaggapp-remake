@@ -1,0 +1,18 @@
+main{
+    padding: 10rem 7rem 5rem;
+
+
+    .hero{
+       
+        .hero-title{
+            @include flex(column,flex-start,flex-start,3rem);
+
+            h1{
+                font-size: 6.5rem;
+                font-weight: 700;
+                line-height: 5rem;
+                color: $dark-purple;
+            }
+        }
+    }
+}

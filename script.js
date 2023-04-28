@@ -1,4 +1,6 @@
 const menuBtn = document.querySelector(".menu-btn")
+const buttonHover = document.querySelectorAll(".button")
+const buttonSpanMenu = document.querySelector(".button-span")
 
 const menuItemsArray = document.querySelectorAll(".array-item")
 
@@ -9,8 +11,18 @@ menuBtn.addEventListener("click", () =>{
     })
 
     if(menuBtn.classList.contains("active")){
-        menuBtn.textContent = "Close"
+        buttonSpanMenu.textContent = "Close"
     }else{
-        menuBtn.textContent = "Menu"
+        buttonSpanMenu.textContent = "Menu"
     }
+})
+
+buttonHover.forEach(item => {
+    item.addEventListener("mouseover", (e) =>{
+    const x = (e.pageX - item.offsetLeft);
+    const y = (e.pageY - item.offsetTop);
+    
+    item.style.setProperty('--xPos', x + 'px')
+    item.style.setProperty('--yPos', y + 'px')
+    })
 })

@@ -29,17 +29,38 @@
     }
 
          .menu-btn {
-             @include transition;
              @include button;
+             @include transition;
+             position: relative;
+             overflow: hidden;
 
              &:hover{
                 color: $dark-purple;
-                background-color: $white;
              }
 
              &.active{
                 color: $dark-purple;
                 background-color: $white;
+
+                &::before{
+                  visibility: hidden;
+                }
+             }
+
+             span{
+                position: relative;
+                z-index: 1;
+             }
+
+             &::before{
+                @include transition;
+                @include hover-effect;
+                background-color: $white;
+             }
+
+             &:hover::before{
+                width: 300px;
+                height: 300px;
              }
          }
 }
