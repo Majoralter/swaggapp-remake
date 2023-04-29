@@ -1,4 +1,5 @@
 main{
+    @include flex(column,center,center,0);
     padding: 0 7rem 5rem;
 
     section{
@@ -159,6 +160,62 @@ main{
                 white-space: nowrap;
                 z-index: 1;
             }
+        }
+    }
+
+    .section-four{
+        @include flex(row,center,center,0);
+        position: relative;
+
+        h2{
+            text-transform: uppercase;
+            font-size: 14rem;
+            font-weight: 900;
+            white-space: nowrap;
+            color: $dark-purple;
+        }
+
+        div{
+            @include flex(column,flex-start,space-between,0);
+            position: absolute;
+            height: 28.25rem;
+            width: 28.25rem;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+
+            h3{
+                font-size: 1.8125rem;
+                font-weight: 800;
+                color: $dark-purple;
+            }
+
+            p{
+                font-size: 5rem;
+                font-weight: 700;
+                color: $dark-purple;
+                line-height: 4rem;
+                letter-spacing: .1rem;
+                white-space: nowrap;
+            }
+        }
+
+        div:nth-of-type(1){
+            background-color: $pure-white;
+            transform: rotate(-10deg);
+        }
+
+        div:nth-of-type(2){
+            background-color: $lightest-purple;
+            transform: rotate(-6deg);
+        }
+
+        div:nth-of-type(3){
+            background-color: $lighter-purple;
+            transform: rotate(-3.5deg);
+        }
+
+        div:nth-of-type(4){
+            background-color: $light-purple;
         }
     }
 }
