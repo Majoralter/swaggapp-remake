@@ -1,13 +1,12 @@
 main{
-    padding: 7rem 7rem 5rem;
-    overflow-x: hidden;
+    padding: 0 7rem 5rem;
 
     section{
-        height: 80vh
+        height: 100vh
     }
 
     .hero{
-        @include flex(row,flex-start,flex-start,10rem);
+        @include flex(row,center,flex-start,10rem);
        
         .hero-title{
             @include flex(column,flex-start,flex-start,2rem);
@@ -20,10 +19,7 @@ main{
             }
 
             p{
-                color: $dark-purple;
-                font-size: 1.5rem;
-                font-weight: 500;
-                line-height: 1.8rem;
+              @include paragraph($dark-purple)
             }
 
             button{
@@ -79,9 +75,10 @@ main{
     }
 
     .section-two{
-
+        @include flex(row,center,flex-start,13rem);
         .scene_two{
             @include scene;
+            margin-left: 10rem;
 
                 &.animate {
                     animation: bounce .7s alternate infinite ease;
@@ -101,6 +98,67 @@ main{
                             @include card_img;
                         }
                 }
+        }
+
+        .section-two_title{
+            @include flex(column,flex-start,flex-start, 2rem);
+            h2{
+                @include heading-2($dark-purple);
+            }
+
+            p{
+                @include paragraph($dark-purple);
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .section-three{
+        @include flex(row,center,center,0);
+        position: relative;
+
+        .abs-img_one{
+            position: absolute;
+            right: -5rem;
+            top: 1rem;
+            height: 225px;
+            width: 225px;
+            object-fit: cover;
+        }
+
+        .abs-img_two{
+            position: absolute;
+            left: -1rem;
+            bottom: 0;
+            height: 250px;
+            width: 250px;
+            object-fit: cover;
+        }
+
+        .section-three_content{
+            @include flex(column,center,center,2rem);
+            height: 33.5625rem;
+            width: 87.5rem;
+            background-color: $dark-purple;
+            border-radius: 3rem;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            
+            img{
+                position: absolute;
+            }
+
+            h2{
+                @include heading-2($white);
+                z-index: 1;
+            }
+
+            p{
+                @include paragraph($white);
+                white-space: nowrap;
+                z-index: 1;
+            }
         }
     }
 }

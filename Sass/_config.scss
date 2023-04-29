@@ -53,8 +53,8 @@ body{
 }
 
 @mixin scene{
-    width: 25rem;
-    height: 25rem;
+    width: 27rem;
+    height: 27rem;
     perspective: 1000px;
     transition: all .3s ease-in-out;
 }
@@ -86,4 +86,18 @@ body{
     transform: rotateY(180deg);
     object-fit: cover;
     border-radius: 1rem;
+}
+
+@mixin heading-2($color){
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 4rem;
+    color: $color;
+}
+
+@mixin paragraph($color){
+    color: $color;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.8rem;
 }

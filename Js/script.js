@@ -1,8 +1,24 @@
+const lenis = new Lenis({
+    duration: 1.2,
+    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+    smoothWheel: true,
+    wheelMultiplier: 80
+})
+
+function raf(time){
+    lenis.raf(time)
+    requestAnimationFrame(raf)
+}
+requestAnimationFrame(raf)
+
+
 const menuBtn = document.querySelector(".menu-btn")
 const buttonHover = document.querySelectorAll(".button")
 const buttonSpanMenu = document.querySelector(".button-span")
 
 const menuItemsArray = document.querySelectorAll(".array-item")
+const images = document.querySelectorAll(".rotate-img")
+const scenes = document.querySelectorAll(".scene-bounce")
 
 
 menuBtn.addEventListener("click", () =>{
@@ -29,8 +45,12 @@ buttonHover.forEach(item => {
 
 setInterval(() =>{
     setTimeout(() =>{
-     document.querySelector(".scene").classList.toggle("animate")
+     scenes.forEach(scene =>{
+        scene.classList.toggle("animate")
+     })
     },100)
 
-    document.querySelector(".card").classList.toggle("is-flipped")
+    images.forEach(image => {
+        image.classList.toggle("is-flipped")
+    })
 }, 4000)
