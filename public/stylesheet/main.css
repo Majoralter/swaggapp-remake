@@ -233,7 +233,7 @@ main {
   align-items: center;
   justify-content: center;
   gap: 0;
-  padding: 0 7rem 5rem;
+  padding: 0 7rem;
 }
 main section {
   height: 100vh;
@@ -509,6 +509,9 @@ main .section-four div:nth-of-type(3) {
 }
 main .section-four div:nth-of-type(4) {
   background-color: #BA80E6;
+}
+main .section-five {
+  width: 100vw;
 }
 
 html.lenis {

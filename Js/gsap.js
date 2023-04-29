@@ -1,22 +1,19 @@
 gsap.registerPlugin(ScrollTrigger)
 
 const cards = gsap.utils.toArray(".overlap-card")
+cards.reverse()
 
-const cardsReversed = cards.reverse()
+gsap.to(cards,{
+    y: -900,
+    rotate: -90,
+    duration: 0.5,
+    stagger: 0.5,
+    ease: "ease",
 
-const tl = gsap.timeline({
-    scrollTrigger: {
-    trigger: ".section-four",
-    pin: true,
-    start: "top top",
-    end: "bottom+=1000px bottom",
-    scrub: true
+    scrollTrigger:{
+        trigger: ".section-four",
+        start: "top top",
+        scrub: true,
+        pin: true
     }
-})
-
-cardsReversed.forEach(card => {
-    tl.to(card,{
-        y: -900,
-        rotate: -90
-    })
 })

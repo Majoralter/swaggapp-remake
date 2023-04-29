@@ -1,6 +1,6 @@
 main{
     @include flex(column,center,center,0);
-    padding: 0 7rem 5rem;
+    padding: 0 7rem;
 
     section{
         height: 100vh
@@ -217,5 +217,10 @@ main{
         div:nth-of-type(4){
             background-color: $light-purple;
         }
+    }
+
+    .section-five{
+        // background-color: $dark-purple;
+        width: 100vw;
     }
 }
