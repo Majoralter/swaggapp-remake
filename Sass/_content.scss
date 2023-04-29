@@ -1,9 +1,13 @@
 main{
-    padding: 10rem 7rem 5rem;
+    padding: 7rem 7rem 5rem;
+    overflow-x: hidden;
 
+    section{
+        height: 80vh
+    }
 
     .hero{
-        @include flex(row,center,flex-start,10rem);
+        @include flex(row,flex-start,flex-start,10rem);
        
         .hero-title{
             @include flex(column,flex-start,flex-start,2rem);
@@ -49,11 +53,54 @@ main{
             }
         }
 
-        img{
-            height: 25rem;
-            width: 25rem;
-            object-fit: cover;
-            border-radius: 1rem;
+        .scene{
+           @include scene;
+
+            &.animate {
+                    animation: bounce .7s alternate infinite ease;
+                    transform: rotateY(20deg);
+            }
+
+             @include keyframes;
+
+            .card{
+              @include card;
+
+            &.is-flipped{
+                transform: skewX(1deg) rotateY(180deg);
+            }
+
+
+             img{
+               @include card_img;
+             }
+            }
+        }
+    }
+
+    .section-two{
+
+        .scene_two{
+            @include scene;
+
+                &.animate {
+                    animation: bounce .7s alternate infinite ease;
+                    transform: rotateY(20deg);
+                }
+
+                @include keyframes;
+
+                .card_two{
+                    @include card;
+
+                        &.is-flipped {
+                            transform: skewX(1deg) rotateY(180deg);
+                        }
+
+                        img{
+                            @include card_img;
+                        }
+                }
         }
     }
 }

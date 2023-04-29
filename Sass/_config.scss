@@ -14,6 +14,7 @@ $white: #F8F2FC;
 
 body{
     background-color: $white;
+    overflow-x: hidden;
 }
 
 // mixins
@@ -26,7 +27,7 @@ body{
 }
 
 @mixin transition{
-    transition: all .6s ease-in-out;
+    transition: all .5s ease-in-out;
 }
 
 @mixin button{
@@ -49,4 +50,40 @@ body{
     top: var(--yPos);
     transform: translate(-50%, -50%);
     border-radius: 50%;
+}
+
+@mixin scene{
+    width: 25rem;
+    height: 25rem;
+    perspective: 1000px;
+    transition: all .3s ease-in-out;
+}
+
+@mixin keyframes{
+    @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+    
+            to {
+                transform: translateY(15px);
+            }
+        }
+}
+
+@mixin card{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+@mixin card_img{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    transform: rotateY(180deg);
+    object-fit: cover;
+    border-radius: 1rem;
 }

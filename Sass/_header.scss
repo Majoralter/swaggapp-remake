@@ -1,102 +1,78 @@
 header{
-    padding:  1rem 2rem 2rem 1rem;
     nav{
-        .nav-items{
-            @include flex(column,flex-start,flex-start,1rem);
-            position: fixed;
-            z-index: 1;
-            padding: 3.5rem 1.5rem 1.5rem;
-            background-color: $dark-purple;
-            width:  fit-content;
-            border-radius: 1.25rem;
-            transform-origin: left 0%;
-            transform: scaleY(0);
-            transition: all .5s ease-in-out;
-            
-            &.active{
-            transform: scaleY(1);
-            }
+    @include flex(row,center,space-between,0);
+    padding: 1rem 1rem 2rem 1rem;
 
-            ul{
-                list-style-type: none;
-                opacity: 0;
-                transition: all .5s ease-in-out;
-                transition-delay: .4s;
+    .nav-toggle-menu{
+    @include flex(row,center,space-between,.5rem);
+    width: 11rem;
+    padding: .4rem;
+    margin-left: 2rem;
+    background: $light-purple;
+    z-index: 6;
+    border-radius: 3.125rem;
+    @include transition;
 
-                &.active{
-                    opacity: 1;
-                }
+    &.active{
+        width: 17rem;
+        background-color: $dark-purple;
+    }
 
-                li{
-                    a{
-                        color: $light-purple;
-                        text-decoration: none;
-                        font-size: 2.4rem;
-                        font-weight: 800;
-                        @include transition;
+    .logo{
+        text-decoration: none;
+        font-size: 2rem;
+        color: $dark-purple;
+        font-weight: 900;
+        @include transition;
+        margin-top: -2%;
 
-                        &:hover{
-                            color: $white;
-                        }
-                    }
-                }
-
-                li:nth-of-type(2){
-                    @include flex(column,flex-start,flex-start,.5rem);
-                    a:not(:first-of-type){
-                        color: $lighter-purple;
-                        font-size: 1.5rem;
-                        margin-left: 5%;
-                        @include transition;
-
-                        &:hover{
-                            color: $white;
-                        }
-                    }
-                }
-
-                li:nth-of-type(3){
-                    a{
-                        color: $white;
-                    }
-                }
-            }
-
-            hr{
-                width: 100%;
-                opacity: 0;
-                transition: all .5s ease-in-out;
-                transition-delay: .3s;
-
-                &.active{
-                    opacity: .2
-                }
-            }
-
-            p{
-                @include flex(row,center,center,.2rem);
-                color: $white;
-                font-size: 1.2rem;
-                white-space: nowrap;
-                font-weight: 700;
-                opacity: 0;
-                transition: all .5s ease-in-out;
-                transition-delay: .3s;
-
-                &.active{
-                    opacity: 1
-                }
-            }
+        &.active{
+            color: $light-purple;
         }
+    }
+
+         .menu-btn {
+             @include button;
+             @include transition;
+             position: relative;
+             overflow: hidden;
+
+             &:hover{
+                color: $dark-purple;
+             }
+
+             &.active{
+                color: $dark-purple;
+                background-color: $white;
+
+                &::before{
+                  visibility: hidden;
+                }
+             }
+
+             span{
+                position: relative;
+                z-index: 1;
+             }
+
+             &::before{
+                @include transition;
+                @include hover-effect;
+                background-color: $white;
+             }
+
+             &:hover::before{
+                width: 300px;
+                height: 300px;
+             }
+         }
+}
 
         button{
             @include button;
             @include transition;
             position: relative;
             overflow: hidden;
-            margin-top: .5rem;
-            position: absolute;
-            right: 2rem;
 
             &:hover{
                 color: $dark-purple;

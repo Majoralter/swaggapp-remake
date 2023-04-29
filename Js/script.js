@@ -26,3 +26,11 @@ buttonHover.forEach(item => {
     item.style.setProperty('--yPos', y + 'px')
     })
 })
+
+setInterval(() =>{
+    setTimeout(() =>{
+     document.querySelector(".scene").classList.toggle("animate")
+    },100)
+
+    document.querySelector(".card").classList.toggle("is-flipped")
+}, 4000)
