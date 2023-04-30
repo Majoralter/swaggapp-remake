@@ -1,9 +1,9 @@
 main{
     @include flex(column,center,center,0);
-    padding: 0 7rem;
+    // padding: 0 7rem;
 
     section{
-        height: 100vh
+        height: 90vh;
     }
 
     .hero{
@@ -129,11 +129,11 @@ main{
 
         .abs-img_two{
             position: absolute;
-            left: -1rem;
-            bottom: 0;
-            height: 250px;
-            width: 250px;
-            object-fit: cover;
+            left: -7rem;
+            bottom: -4rem;
+            height: 350px;
+            width: 350px;
+            object-fit: contain;
         }
 
         .section-three_content{
@@ -220,7 +220,49 @@ main{
     }
 
     .section-five{
-        // background-color: $dark-purple;
-        width: 100vw;
+        @include flex(row,center,center,10rem);
+
+        .section-five_title{
+            @include flex(column,flex-start,flex-start,2rem);
+
+            h2{
+                @include heading-2($dark-purple);
+            }
+
+            p{
+                @include paragraph($dark-purple);
+            }
+
+            a{
+                // text-decoration: none;
+                font-size: 1.5rem;
+                color: $dark-purple;
+                font-weight: 900;
+                // border-bottom: solid 2px $dark-purple;
+            }
+        }
+
+        .scene_three{
+            @include scene;
+
+            &.animate {
+                    animation: bounce .7s alternate infinite ease;
+                    transform: rotateY(20deg);
+            }
+
+            @include keyframes;
+
+            .card_three{
+                @include card;
+
+                &.is-flipped {
+                        transform: skewX(1deg) rotateY(180deg);
+                }
+
+                img{
+                    @include card_img;
+                }
+            }
+        }
     }
 }

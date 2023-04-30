@@ -16,7 +16,7 @@ header nav {
   align-items: center;
   justify-content: space-between;
   gap: 0;
-  padding: 1rem 1rem 2rem 1rem;
+  padding: 1rem 1rem 0;
 }
 header nav .nav-toggle-menu {
   display: flex;
@@ -134,27 +134,26 @@ header nav button:hover::before {
   justify-content: flex-start;
   gap: 1rem;
   position: absolute;
-  top: 1rem;
-  left: 3rem;
-  z-index: 5;
-  background-color: #391952;
-  transition-delay: 0.5s;
-  height: 3.4rem;
-  width: 10.05rem;
-  border-radius: 3.125rem;
-  transition: all 0.3s ease-in-out;
-}
-.nav-items.active {
   width: fit-content;
   height: fit-content;
   border-radius: 1.25rem;
   padding: 3.5rem 1.5rem 1.5rem;
   top: 0.5rem;
   left: 2rem;
+  z-index: 5;
+  background-color: #391952;
+  transform: scaleY(0);
+  transform-origin: left -50%;
+  transition-delay: 0.8s;
+  transition: all 0.4s ease-in-out;
+}
+.nav-items.active {
+  transform: scaleY(1);
 }
 .nav-items ul {
   list-style-type: none;
   display: none;
+  transition: all 0.1s ease-in-out;
 }
 .nav-items ul.active {
   display: block;
@@ -233,10 +232,9 @@ main {
   align-items: center;
   justify-content: center;
   gap: 0;
-  padding: 0 7rem;
 }
 main section {
-  height: 100vh;
+  height: 90vh;
 }
 main .hero {
   display: flex;
@@ -417,11 +415,11 @@ main .section-three .abs-img_one {
 }
 main .section-three .abs-img_two {
   position: absolute;
-  left: -1rem;
-  bottom: 0;
-  height: 250px;
-  width: 250px;
-  object-fit: cover;
+  left: -7rem;
+  bottom: -4rem;
+  height: 350px;
+  width: 350px;
+  object-fit: contain;
 }
 main .section-three .section-three_content {
   display: flex;
@@ -511,7 +509,71 @@ main .section-four div:nth-of-type(4) {
   background-color: #BA80E6;
 }
 main .section-five {
-  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+}
+main .section-five .section-five_title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+main .section-five .section-five_title h2 {
+  font-size: 5.5rem;
+  font-weight: 700;
+  line-height: 4rem;
+  color: #391952;
+}
+main .section-five .section-five_title p {
+  color: #391952;
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.8rem;
+}
+main .section-five .section-five_title a {
+  font-size: 1.5rem;
+  color: #391952;
+  font-weight: 900;
+}
+main .section-five .scene_three {
+  width: 27rem;
+  height: 27rem;
+  perspective: 1000px;
+  transition: all 0.3s ease-in-out;
+}
+main .section-five .scene_three.animate {
+  animation: bounce 0.7s alternate infinite ease;
+  transform: rotateY(20deg);
+}
+@keyframes bounce {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(15px);
+  }
+}
+main .section-five .scene_three .card_three {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+main .section-five .scene_three .card_three.is-flipped {
+  transform: skewX(1deg) rotateY(180deg);
+}
+main .section-five .scene_three .card_three img {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  transform: rotateY(180deg);
+  object-fit: cover;
+  border-radius: 1rem;
 }
 
 html.lenis {
